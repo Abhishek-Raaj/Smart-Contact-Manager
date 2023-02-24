@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+     
+      
+  <div  class="update-form">
+ 
+  <form th:object="${contact}" method="post" enctype="multipart/form-data" th:action="@{/user/update-submit}">
+  <div class="col-auto mt-3">
+    <input type="text" th:value="${contact.name}" class="form-control" aria-describedby="passwordHelpInline" name="name" placeholder="Enter Name Here">
+  </div>
+  
+  <div class="col-auto mt-3">
+    <input type="text" th:value="${contact.secondName}"  class="form-control" aria-describedby="passwordHelpInline" name="secondName" placeholder="Enter NickName Here">
+  </div>
+  
+  <div class="col-auto mt-3">
+    <input type="text" th:value="${contact.work}"  class="form-control" aria-describedby="passwordHelpInline" name="work" placeholder="Enter Work Here">
+  </div>
+  
+  
+  <div class="col-auto mt-3">
+    <input type="email" th:value="${contact.email}" name="email" class="form-control" aria-describedby="passwordHelpInline" placeholder="Enter Email Here">
+  </div>
+  
+  
+  <div class="col-auto mt-3">
+    <input type="text"  th:value="${contact.phone}"name="phone" class="form-control" aria-describedby="passwordHelpInline" placeholder=" Enter Phone Number  ">
+  </div>
+  <div class="col-auto mt-3">
+    <textarea class="form-control" id="about" rows="3"  th:text="${contact.description}" name="description" placeholder="Enter Contact Description"></textarea>
+  </div>
+  <div class="custom-file col-auto mt-3">
+  <div style="width: 200px; height: 200px">
+     <img th:src="@{'/img/'+${contact.image}}" style="width: 200px; height: 200px" />
+       <input type="hidden"  name="image" th:value="${contact.image}"/>
+        <input type="hidden"  name="id" th:value="${contact.cid}"/>
+     </div>
+  <input type="file"  name="photo" accept=".png, .jpg, .jpeg" placeholder="update photo" th:value="${contact.image}"/>
+  </div>
+  <div class="custom-file col-auto mt-3">
+  <button type="submit" class="btn btn-primary">Update Contact</button>
+  </div>
+   </form>
+</div>
+     
+</section>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="Layout(content)">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title th:text="${tittle}"></title>
+  </head>
+  <body>
+    
+     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="#">SmartContact Manager</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" th:href="@{/home}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" th:href="@{/about}">About</a>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link " href="#" th:href="@{/logout}">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#" th:href="@{/contact}">ContactUs </a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+
+
+  <div class="sidebar">
+  <div class="sidebar_inner">
+  <span class="crossbtn" onclick=toggle()>&times;</span>
+    <a href="#" class="a"> <i class="fa-solid fa-house" th:href="@{/user/user_dashboard}"></i>Home</a>
+    <a href="#" th:href="@{/user/all_contacts/0}" class="a"><i class="fa-solid fa-address-book"></i>View Contacts</a>
+    <a href="#" th:href="@{/user/contact}" class="a"><i class="fa-solid fa-pencil"></i>Add Contacts</a>
+    <a href="#" class="a"> <i class="fa-solid fa-user"></i>Your Profile</a>
+     <a href="#" class="a" th:href="@{/logout}"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+    </div>
+  </div>
+ 
+  <div class="content">
+  <i class="fa-solid fa-bars bar" onclick=toggle()></i>
+  <div  th:if="${session.message}"    class="container">
+   <div th:classappend="${'alert-'+ session.message.type}"   class="alert " role="alert">
+         <span th:text="${session.message.msg}"></span>
+    </div> 
+    </div>
+    
+  <div th:replace="${content}" style="margin-top: 20px">
+  
+  </div>
+  </div>
+    
+    <script th:src="@{/js/script.js}"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

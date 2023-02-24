@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="/normal/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+<section class="banner d-flex justify-content-center align-items-center">
+<div class="text-center">
+<h2>Welcome <span th:text="${user.name}" ></span></h2>
+</div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+      
+  <div  style="border:2px solid grey; padding-bottom:20px; width:50%; box-sizing: border-box;margin-left: 15%; border-radius: 10px">
+ 
+  <form th:object="${contact}" method="post" enctype="multipart/form-data" th:action="@{/user/contact-submit}">
+  <div class="col-auto mt-3">
+    <input type="text" class="form-control" aria-describedby="passwordHelpInline" name="name" placeholder="*Enter Name Here" required="required">
+  </div>
+  
+  <div class="col-auto mt-3">
+    <input type="text"  class="form-control" aria-describedby="passwordHelpInline" name="secondName" placeholder="Enter NickName Here" >
+  </div>
+  
+  <div class="col-auto mt-3">
+    <input type="text"  class="form-control" aria-describedby="passwordHelpInline" name="work" placeholder="*Enter Work Here" required="required">
+  </div>
+  
+  
+  <div class="col-auto mt-3">
+    <input type="email" name="email" class="form-control" aria-describedby="passwordHelpInline" placeholder="*Enter Email Here" required="required">
+  </div>
+  
+  
+  <div class="col-auto mt-3">
+    <input type="text" name="phone" class="form-control" aria-describedby="passwordHelpInline" placeholder=" *Enter Phone Number  "  required="required">
+  </div>
+  <div class="col-auto mt-3">
+   
+    <textarea class="form-control" id="about" rows="3" name="description" placeholder="*Enter Contact Description" required="required"></textarea>
+  
+  </div>
+  <div class="custom-file col-auto mt-3">
+  <input type="file"  name="photo" accept=".png, .jpg, .jpeg"/>
+  </div>
+  <div class="custom-file col-auto mt-3">
+  <button type="submit" class="btn btn-primary">Add Contact</button>
+  </div>
+   </form>
+</div>
+     
+</section>
+
+</body>
+</html>

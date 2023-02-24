@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section class="banner justify-content-center align-items-center" style="display: flex; flex-direction:column;">
+<div class="text-center">
+<h1 class="font-weight-bold">Smart Contact Manager</h1>
+<p> start Collecting your contacts in very smarter way.we provide very efficient and smarter way of handling contacts.</p>
+
+<a th:href="@{/user/dashboard}"><button class=" btn btn-lg bg-primary text-white">Click Here</button></a>
+</div>
+
+<div class="home-testimonial">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center testimonial-pos">
+            <div class="col-md-12 pt-4 d-flex justify-content-center">
+                <h3>Testimonials</h3>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center">
+                <h2>Explore the students experience</h2>
+            </div>
+        </div>
+        <div class="home-testimonial-bottom">
+            <div class="container testimonial-inner">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-4 style-3">
+                        <div class="tour-item ">
+                            <div class="tour-desc bg-white">
+                                <div class="tour-text color-grey-3 text-center">&ldquo;It's help me store my contact details.I can get my contact on any device by just login.&rdquo;</div>
+                                <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/6625914/pexels-photo-6625914.jpeg" alt=""></div>
+                                <div class="link-name d-flex justify-content-center">Renu kaur</div>
+                                <div class="link-position d-flex justify-content-center">Student</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 style-3">
+                        <div class="tour-item ">
+                            <div class="tour-desc bg-white">
+                                <div class="tour-text color-grey-3 text-center">&ldquo;By using this web app our friend group just take anyone contact details who has added by the teamates.&rdquo;</div>
+                                <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                                <div class="link-name d-flex justify-content-center">Sneha kumari</div>
+                                <div class="link-position d-flex justify-content-center">Student</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 style-3">
+                        <div class="tour-item ">
+                            <div class="tour-desc bg-white">
+                                <div class="tour-text color-grey-3 text-center">&ldquo;I will give it 5 star rating because it is very helpful for me and my family.&rdquo;</div>
+                                <div class="d-flex justify-content-center pt-2 pb-2"><img class="tm-people" src="https://images.pexels.com/photos/4946604/pexels-photo-4946604.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></div>
+                                <div class="link-name d-flex justify-content-center">Balbir Kaur</div>
+                                <div class="link-position d-flex justify-content-center">Student</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+</div>
+
+
+</section>
+
+</body>
+</html>

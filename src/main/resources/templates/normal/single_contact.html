@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="/normal/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section class="banner d-flex justify-content-center align-items-center">
+<div class=" container single-con">
+      <div class="single_detail">
+      <div class="single-in">
+     <img th:src="@{'/img/'+${single.image}}"/>
+     <h3 th:text="${single.name}"></h3>
+     </div>
+   
+         <!--  email description phone second_name work-->
+    <div>
+   <table class="table table-dark container">
+  <tbody>
+    <tr >
+      <th scope="row">Email</th>
+      <td th:text="${single.email}"></td>
+    </tr>
+    <tr >
+      <th scope="row">Second-Name</th>
+      <td th:text="${single.secondName}"></td>
+    </tr>
+    <tr >
+      <th scope="row">Phone</th>
+      <td th:text="${single.phone}"></td>
+    </tr>
+    <tr >
+      <th scope="row">Work</th>
+      <td th:text="${single.work}"></td>
+    </tr>
+    <tr >
+      <th scope="row">About</th>
+      <td th:text="${single.description}"></td>
+    </tr>
+  </tbody>
+</table>
+     </div>
+</div>
+</div>
+</section>
+
+</body>
+</html>
